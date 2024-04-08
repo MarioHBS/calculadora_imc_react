@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import Form from './components/Form'
+import Table from './components/Result'
 
 // import './App.css'
 
@@ -18,6 +19,12 @@ function App() {
   const handleInputChanges = (key, value) => {
     setInputValues({...inputValues, [key]: value});
   }
+
+  const imcCalc = () => {
+    const tHgt = inputValues.height / 100;
+    console.log(`Altura ${tHgt} | Peso ${inputValues.weight} `);
+    return parseFloat((inputValues.weight) / (tHgt*tHgt)).toFixed(2);
+  };
 
   return (
     <Container>
@@ -33,6 +40,7 @@ function App() {
       </header>
       <main>
         <Form inputs={inputValues} onInputChange={handleInputChanges} />
+        <Table imc={imcCalc()}/>
       </main>
     </Container>
   )
