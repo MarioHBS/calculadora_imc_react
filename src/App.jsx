@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import Form from './components/Form'
-import Table from './components/Result'
+import Result from './components/Result'
 
 // import './App.css'
 
@@ -40,7 +40,7 @@ function App() {
       </header>
       <main>
         <Form inputs={inputValues} onInputChange={handleInputChanges} />
-        <Table imc={imcCalc()}/>
+        <Result imc={imcCalc()} />
       </main>
     </Container>
   )

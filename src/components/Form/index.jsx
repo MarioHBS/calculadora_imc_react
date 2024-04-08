@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -51,10 +50,10 @@ export default ({inputs, onInputChange}) => { /* props.inputs | props.onInputCha
                     </InputGroup>
                 </Col>
             </Row>
-
+{/* 
             <Row xs='auto' className='justify-content-center mt-3'>
                 <Button variant="primary" className='px-3' type="submit">Calcular</Button>
-            </Row>
+            </Row> */}
         </Form>
     );
 }
