@@ -1,6 +1,15 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-family: sans-serif;
+}
+
+header {
+    background-color: var(--colorBackground);
+    padding: 30px;
+}
+
+:root {
+    --colorBackground: rgba(177, 236, 117, 0.918);
 }
