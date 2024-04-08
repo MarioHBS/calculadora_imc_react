@@ -10,8 +10,14 @@ import Form from './components/Form'
 // import './App.css'
 
 function App() {
-  const [height, setHeight] = useState(1);
-  const [weight, setWeight] = useState(0);
+  const [inputValues, setInputValues] = useState({
+    height: 100,
+    weight: 55
+  });
+
+  const handleInputChanges = (key, value) => {
+    setInputValues({...inputValues, [key]: value});
+  }
 
   return (
     <Container>
@@ -22,15 +28,11 @@ function App() {
               <h1 className='col-md'>Calculadora IMC</h1>
             </Col>
           </Row>
-          {/* <Row>
-            <Col>hdbcaihbcah</Col>
-            <Col>ancoancoan</Col>
-            <Col>coluna 3</Col>
-          </Row> */}
+
         </Col>
       </header>
       <main>
-        <Form  />
+        <Form inputs={inputValues} onInputChange={handleInputChanges} />
       </main>
     </Container>
   )

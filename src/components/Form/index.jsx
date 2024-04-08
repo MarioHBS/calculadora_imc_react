@@ -1,22 +1,37 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { useState } from 'react';
-import { Button, Col, Form, InputGroup, Row } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
 
+export default ({inputs, onInputChange}) => { /* props.inputs | props.onInputChange */
+    const handle = (event) => {
+        const { name, value } = event.target;
+        {
+            (name === 'height')
+            ? onInputChange(name, Number(value).toFixed(0))
+            : onInputChange(name, value)
+        };
+        // console.log(name);
+    }
 
-export default () => {
-    const [height, setHeight] = useState(100);
-    const [weight, setWeight] = useState(55);
-
-    const updateHgt = (event) => setHeight(event.target.value);
-    const updateWgt = (event) => setWeight(event.target.value);
+    const formatWeight = (value) => Number(value).toFixed(2);
 
     return (
-        <Form className="ms-4 me-4">
+        <Form className="mx-4">
             <Row className='justify-content-center'>
                 <Col xs={4} lg={3} className='text-center'>
                     <Form.Label className='fs-4' htmlFor='formHeight'>Altura:</Form.Label>
                     <InputGroup>
-                        <Form.Control className='text-center fs-5 font-monospace' type="number" value={height} onChange={updateHgt} min={100} max={230} id='formHeight' />
+                        <Form.Control
+                            className='text-center fs-5 font-monospace'
+                            type="number"
+                            value={inputs.height}
+                            onChange={handle}
+                            min={100} max={230}
+                            name='height' id='formHeight'
+                        />
                         <InputGroup.Text>cm</InputGroup.Text>
                     </InputGroup>
                 </Col>
@@ -24,7 +39,14 @@ export default () => {
                 <Col xs={4} lg={3} className="text-center">
                     <Form.Label className='fs-4' htmlFor='formWeight'>Peso:</Form.Label>
                     <InputGroup>
-                        <Form.Control className='text-center fs-5 font-monospace' type="number" value={weight} onChange={updateWgt} id='formWeight' />
+                        <Form.Control
+                            className='text-center fs-5 font-monospace'
+                            type="number"
+                            value={formatWeight(inputs.weight)}
+                            onChange={handle}
+                            step={0.5}
+                            name='weight' id='formWeight'
+                        />
                         <InputGroup.Text>Kg</InputGroup.Text>
                     </InputGroup>
                 </Col>
