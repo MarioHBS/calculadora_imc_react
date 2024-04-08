@@ -15,10 +15,12 @@ function App() {
 
   return (
     <Container>
-      <header className='mb-5'>
+      <header className='my-5'> {/* top and bottom */}
         <Col>
           <Row className='justify-content-md-center'>
-            <Col md="auto"><h1 className='col-md'>Calculadora IMC</h1></Col>
+            <Col md="auto">
+              <h1 className='col-md'>Calculadora IMC</h1>
+            </Col>
           </Row>
           {/* <Row>
             <Col>hdbcaihbcah</Col>
