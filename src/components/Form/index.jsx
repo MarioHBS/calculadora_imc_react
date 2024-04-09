@@ -9,7 +9,7 @@ export default ({inputs, onInputChange}) => { /* props.inputs | props.onInputCha
         const { name, value } = event.target;
         {
             (name === 'height')
-            ? onInputChange(name, Number(value).toFixed(0))
+            ? onInputChange(name, Number(value.slice(0, 3)).toFixed(0))
             : onInputChange(name, value)
         };
         // console.log(name);

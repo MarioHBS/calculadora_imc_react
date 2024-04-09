@@ -22,7 +22,7 @@ function App() {
 
   const imcCalc = () => {
     const tHgt = inputValues.height / 100;
-    console.log(`Altura ${tHgt} | Peso ${inputValues.weight} `);
+    // console.log(`Altura ${tHgt} | Peso ${inputValues.weight} `);
     return parseFloat((inputValues.weight) / (tHgt*tHgt)).toFixed(2);
   };
 
